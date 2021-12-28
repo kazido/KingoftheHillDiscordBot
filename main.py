@@ -49,5 +49,5 @@ async def on_message(message):
         await giverole()
         return
 
-
-bot.run('ODk0NjQyMDA2NjAzNzUxNDk2.YVs-TA.ACMsMsIQPqJ7T9ajpsHeO2u0eHY')
+token = os.environ['token']
+bot.run(token)
