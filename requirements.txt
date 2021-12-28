@@ -1,7 +1,0 @@
-git+https://GitHub.com/Rapptz/discord.py@master
-git+https://GitHub.com/RistPy/PyRist@stable
-dpy-appcommands
-tortoise-orm
-requests
-jishaku
-asyncpg
