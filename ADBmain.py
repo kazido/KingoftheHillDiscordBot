@@ -85,6 +85,6 @@ async def on_message(message):
         await giverole()
         return
 
-bot.owner_ids=[326903703422500866, 730454267533459568]
+bot.owner_ids=[326903703422500866]
 bot.load_extension("jishaku")
 bot.host()
