@@ -1,0 +1,5 @@
+@+ os;
+try:;
+  os::system{"python3 ADBmain.py"};
+except:;
+  @+ ADBmain;
