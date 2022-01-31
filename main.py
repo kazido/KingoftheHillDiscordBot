@@ -2,14 +2,16 @@ import discord, asyncio
 import random
 import json
 import os,base64
+from discord_slash import SlashCommand, SlashContext
+from discord_slash.utils.manage_commands import create_choice, create_option
 
 
 from itertools import cycle
 from discord.ext import commands, tasks
 from discord.utils import get
 intents = discord.Intents.all()
-
 bot = commands.Bot(command_prefix='//', intents=intents, case_insensitive= True, strip_after_prefix=True)
+slash = SlashCommand(bot, sync_commands=True)
 status = cycle([':)', ':('])
 
 # LOADING AND UNLOADING COGS
@@ -18,6 +20,16 @@ for filename in os.listdir('./Cogs'):
         bot.load_extension(f'Cogs.{filename[:-3]}')
 
 # OTHER COMMANDS
+
+@slash.slash(
+    name="test",
+    description="Testing command",
+    guild_ids=[856915776345866240]
+)
+async def _test(ctx:SlashContext):
+    await ctx.send("Testing!")
+
+
 
 @bot.event
 async def on_message(message):
